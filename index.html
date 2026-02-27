@@ -352,6 +352,13 @@
             color: #2ed573;
         }
 
+        .correct-rate {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #ffa502;
+            font-weight: 500;
+        }
+
         .no-results {
             text-align: center;
             padding: 60px 20px;
@@ -6796,6 +6803,7 @@
                             <div class="answer-display" id="answer-${idx}">
                                 <div class="answer-label">正答</div>
                                 <div class="answer-value">${q.answer.toUpperCase()}</div>
+                                ${q.correct_rate ? `<div class="correct-rate">正答率: ${q.correct_rate}</div>` : ''}
                             </div>
                         </div>
                     </div>
@@ -6868,6 +6876,7 @@
                             <div class="answer-display" id="random-answer">
                                 <div class="answer-label">正答</div>
                                 <div class="answer-value">${q.answer.toUpperCase()}</div>
+                                ${q.correct_rate ? `<div class="correct-rate">正答率: ${q.correct_rate}</div>` : ''}
                             </div>
                         </div>
                     </div>
