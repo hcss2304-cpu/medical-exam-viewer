@@ -217,6 +217,19 @@
             font-size: 12px;
         }
 
+        .rate-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .rate-badge.low {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
         .question-preview {
             flex: 1;
             margin-left: 16px;
@@ -6788,6 +6801,7 @@
                         <div class="question-meta">
                             <span class="question-badge">${q.section}${q.question_number}</span>${getQuestionImages(q).length > 0 ? '<span class="image-badge">画像</span>' : ''}
                             <span class="subject-badge">${q.subject}</span>
+                            ${q.correct_rate ? `<span class="rate-badge ${parseInt(q.correct_rate) < 50 ? 'low' : ''}">${q.correct_rate}</span>` : ''}
                         </div>
                         <div class="question-preview">${q.question_text.substring(0, 80)}...</div>
                         <span class="expand-icon">▼</span>
